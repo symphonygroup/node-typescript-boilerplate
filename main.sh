@@ -21,7 +21,6 @@ npm i -D \
   nodemon \
   vitest \
   @vitest/coverage-c8 \
-  prettier \
   @types/node \
   eslint \
   eslint-config-google \
