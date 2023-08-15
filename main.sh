@@ -42,8 +42,11 @@ cp -a "$script_dir/assets/." $(pwd)
 # add scripts
 node -e "\
   f=require('fs');\
-  p=require('./package.json');
-  s=require('$script_dir/assets/scripts.json')
+  p=require('./package.json');\
+  s=require('./scripts.json');\
   p.main='dist/main.js';\
   p.scripts = s;\
   f.writeFileSync('package.json', JSON.stringify(p, null, 2))"
+
+# cleanup
+rm ./scripts.json
