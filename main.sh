@@ -41,13 +41,10 @@ mkdir tests
 cp -a "$script_dir/assets/." $(pwd)
 
 # add scripts
-node -e "p = require('./package.json');\
+node -e "\
   f=require('fs');\
+  p=require('./package.json');
+  s=require('$script_dir/assets/scripts.json')
   p.main='dist/main.js';\
-  s={};\
-  s.start='node dist/main.js';\
-  s.build='tsc --p tsconfig.build.json';\
-  s.dev='nodemon -e ts,json --files src/main.ts';\
-  s.test='vitest';\
   p.scripts = s;\
   f.writeFileSync('package.json', JSON.stringify(p, null, 2))"
