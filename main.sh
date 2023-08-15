@@ -20,7 +20,7 @@ npm i -D \
   ts-node \
   nodemon \
   vitest \
-  @vitest/coverage-c8 \
+  @vitest/coverage-v8 \
   @types/node \
   eslint \
   eslint-config-google \
