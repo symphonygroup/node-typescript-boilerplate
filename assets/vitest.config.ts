@@ -3,7 +3,6 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
   test: {
     include: ['tests/**/*.test.ts'],
-    reporters: 'default',
     maxThreads: 4,
     minThreads: 1,
     coverage: {
@@ -11,7 +10,8 @@ export default defineConfig({
       enabled: true,
       include: ['src/**/*.ts'],
       statements: 95,
-      branches: 80
+      branches: 80,
+      reporter: ['html', 'text']
     },
     mockReset: true,
     silent: true,
