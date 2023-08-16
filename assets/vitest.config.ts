@@ -13,7 +13,6 @@ export default defineConfig({
       branches: 80,
       reporter: ['html', 'text']
     },
-    mockReset: true,
     silent: true,
     watch: false
   }
