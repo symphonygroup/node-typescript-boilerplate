@@ -1,6 +1,11 @@
 # script arg - project dir
 dir=$1
 
+if [[ $# -eq 0 ]] ; then
+    echo 'Folder name not provided'
+    exit 1
+fi
+
 # script absolute path
 script_dir=$(dirname -- "$( readlink -f -- "$0" )")
 
