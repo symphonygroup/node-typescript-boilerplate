@@ -1,3 +1,4 @@
+FROM building5/dumb-init:1.2.1 as init
 FROM node:18.17.1-bookworm-slim AS builder
 
 WORKDIR /build
@@ -12,13 +13,10 @@ FROM node:18.17.1-bookworm-slim
 
 WORKDIR /app
 
-COPY --from=builder /build/dist ./dist
-COPY --from=builder /build/node_modules ./node_modules
-
 USER node
 
-ENV PORT 8080
+COPY --from=builder /build/dist ./dist
+COPY --from=builder /build/node_modules ./node_modules
+COPY --from=init /dumb-init /usr/local/bin
 
-EXPOSE 8080
-
-CMD ["node", "dist/main.js"]
+CMD ["dumb-init", "node", "dist/main.js"]
