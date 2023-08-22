@@ -3,5 +3,7 @@
   "build": "tsc --p tsconfig.build.json",
   "dev": "nodemon -e ts,json --files src/main.ts",
   "test": "vitest",
-  "test:ci": "npm run test -- --single-thread"
+  "test:ci": "npm run test -- --single-thread",
+  "lint": "eslint \"{tests,src}/**/*.ts\"",
+  "lint:fix": "npm run lint -- --fix"
 }
