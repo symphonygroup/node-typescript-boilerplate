@@ -41,7 +41,7 @@ touch src/main.ts
 # create tests folder
 mkdir tests
 
-# copy configs
+# copy assets
 cp -a "$script_dir/assets/." $(pwd)
 
 # add scripts
