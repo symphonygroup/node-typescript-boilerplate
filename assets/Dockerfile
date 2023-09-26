@@ -1,5 +1,5 @@
 FROM building5/dumb-init:1.2.1 as init
-FROM node:18.17.1-bookworm-slim AS builder
+FROM node:18.18.0-bookworm-slim AS builder
 
 WORKDIR /build
 
@@ -9,7 +9,7 @@ RUN npm ci
 RUN npm run build
 RUN npm prune --production
 
-FROM node:18.17.1-bookworm-slim
+FROM node:18.18.0-bookworm-slim
 
 WORKDIR /app
 
