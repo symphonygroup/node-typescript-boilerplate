@@ -2,8 +2,8 @@
   "start": "node dist/main.js",
   "build": "tsc --p tsconfig.build.json",
   "dev": "nodemon -e ts,json --files src/main.ts",
-  "test": "vitest",
-  "test:ci": "npm run test -- --single-thread",
+  "test": "jest",
+  "test:ci": "npm run test -- --runInBand",
   "lint": "eslint \"{tests,src}/**/*.ts\"",
   "lint:fix": "npm run lint -- --fix"
 }

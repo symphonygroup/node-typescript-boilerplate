@@ -24,8 +24,8 @@ npm i -D \
   @faker-js/faker \
   ts-node \
   nodemon \
-  vitest \
-  @vitest/coverage-v8 \
+  ts-jest \
+  @types/jest \
   @types/node \
   eslint \
   eslint-config-google \
